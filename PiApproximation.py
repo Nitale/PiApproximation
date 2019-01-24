@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 def SerieInvCarres(n, parity):
     result = 0
     if not parity:
-        for i in range (1, n):
+        for i in range (1, n+1):
             result += 1/i**2
         return result
     else:
-        for i in range (1, n, 2):
+        for i in range (1, n+1, 2):
             result += 1/i**2
         return result
 
@@ -41,7 +41,7 @@ def GraphMethodes(begin, end):
 
 def MethodeSerieRamanujan(n):
     result = 0
-    for i in range(0,n):
+    for i in range(0,n+1):
         result += ((math.factorial(4*i))/(math.factorial(i)**4))*((1103+26390*i)/((4*99)**(4*i)))
     return 1/(result*((2*math.sqrt(2))/(9801)))
 
