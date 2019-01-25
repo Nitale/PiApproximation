@@ -45,3 +45,21 @@ def DiskGraph(n):
     plt.xlabel('x')
     plt.ylabel('y')
     plt.show()
+    
+def MonteCarlo(n):
+    return 4*Tirage(n)[4]
+
+    # Shows the difference between pi and Monte Carlo s estimation between begin and end
+def MonteCarloComparedToPi(begin, end):
+    x=[]
+    y=[]
+    for i in range (begin, end + 1):
+        x.append(i)
+        y.append(math.pi - MonteCarlo(i))
+    plt.scatter(x, y, s=10, label="difference between PI and Monte-Carlo estimation")
+    plt.legend()
+    plt.xlim(begin, end)
+    plt.ylim(0, 0.1)
+    plt.xlabel('Point Number')
+    plt.ylabel('Pi - estimation')
+    plt.show()
