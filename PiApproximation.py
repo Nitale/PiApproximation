@@ -13,18 +13,18 @@ def SerieInvCarres(n, parity):
     result = 0
     if not parity:
         for i in range (1, n+1):
-            result += 1/i**2
-        return result
+            result += 1/(math.pow(i, 2))
     else:
-        for i in range (1, n+1, 2):
-            result += 1/i**2
-        return result
+        for i in range (0, n+1):
+            result += 1/(math.pow(2*i + 1, 2))
+    
+    return result
 
 def MethodeSerieInvCarres(n):
-    return math.sqrt(SerieInvCarres(n, 0)*6)
+    return math.sqrt(SerieInvCarres(n, False)*6)
 
 def MethodeSerieInvCarresImparis(n):
-    return math.sqrt(SerieInvCarres(n, 1)*8)
+    return math.sqrt(SerieInvCarres(n, True)*8)
 
     # Shows the precision for the estimation of the 2 series
         # Shows the graph from begin to end (first value from last value)
@@ -40,7 +40,7 @@ def GraphMethodes(begin, end):
     plt.plot(x, y2, label="Série Inverse Carrés Impaires")
     plt.legend()
     plt.xlim(begin, end)
-    plt.ylim(0, 0.05)
+    plt.ylim(0, 0.01)
     plt.show()
     
     # Estimating Pi by Ramanujan's method
