@@ -6,7 +6,7 @@ Ceci est un script temporaire.
 """
 import math
 import matplotlib.pyplot as plt
-import decimal as dec
+from decimal import *
 
     # return the result of the 1/n**2 sum from 1 to n
         # n : number of elements
